@@ -67,3 +67,35 @@ footer {
     font-size: 0.875rem;
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Bouton de déconnexion */
+.btn-disconnect {
+    background-color: #dc3545; /* Rouge */
+    color: white;
+    padding: 0.5rem 1.25rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-disconnect:hover {
+    background-color: #b02a37; /* Rouge plus foncé au survol */
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+/* Header adjustments */
+header {
+    background: linear-gradient(90deg, #3b668a, #6bb2db);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-right: 80px; /* Pour laisser de la place au bouton */
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.75rem;
+}
