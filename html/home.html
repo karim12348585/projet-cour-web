@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Projet Web</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="text-white text-center py-4 shadow-lg">
+        <h1><i class="fas fa-project-diagram"></i> Bienvenue au Modèle de Classification d'images</h1>
+    </header>
+
+    <main class="container my-5 flex-grow-1">
+        <section id="home-page" class="mb-5">
+            <!-- Texte introductif -->
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Bienvenue sur notre plateforme</h2>
+                <p class="text-muted">
+                    Connectez-vous pour accéder à votre espace personnel ou créez un compte pour découvrir nos services. 
+                </p>
+            </div>
+    
+            <div class="row justify-content-center">
+                <!-- Login Section -->
+                <div class="col-md-5 mb-4">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-header bg-gradient-primary text-white text-center">
+                            <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+                        </div>
+                        <div class="card-body">
+                            <form action="http://localhost/projet%20cour/login.php" method="POST">
+                                <div class="mb-3">
+                                    <label for="login-email" class="form-label fw-bold">Email</label>
+                                    <input type="email" id="login-email" name="email" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="login-password" class="form-label fw-bold">Mot de passe</label>
+                                    <input type="password" id="login-password" name="password" class="form-control" required>
+                                </div>
+                                <button type="submit" class="btn btn-gradient-primary w-100"><i class="fas fa-sign-in-alt"></i> Se connecter</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Sign Up Section -->
+                <div class="col-md-5 mb-4">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-header bg-gradient-primary text-white text-center">
+                            <h2><i class="fas fa-user-plus"></i> Sign Up</h2>
+                        </div>
+                        <div class="card-body">
+                            <form action="http://localhost/projet%20cour/sign.php" method="POST">
+                                <div class="mb-3">
+                                    <label for="signup-name" class="form-label fw-bold">Nom complet</label>
+                                    <input type="text" id="signup-name" name="name" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signup-email" class="form-label fw-bold">Email</label>
+                                    <input type="email" id="signup-email" name="email" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signup-password" class="form-label fw-bold">Mot de passe</label>
+                                    <input type="password" id="signup-password" name="password" class="form-control" required>
+                                </div>
+                                <button type="submit" class="btn btn-gradient-primary w-100"><i class="fas fa-user-plus"></i> Créer un compte</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Projet Web Dynamique</p>
+        
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
