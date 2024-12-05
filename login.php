@@ -5,7 +5,7 @@ session_start(); // Démarrer la session
 $host = 'localhost';
 $user = 'root';
 $password = '';
-$dbname = 'image_classification';
+$dbname = 'image_classification' ;
 
 // Connexion à la base de données
 $connection = new mysqli($host, $user, $password, $dbname);
@@ -43,9 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Démarrer la session et enregistrer l'utilisateur
             $_SESSION['user_id'] = $user['id']; // Exemple : enregistrer l'ID utilisateur
             $_SESSION['email'] = $user['email']; // Enregistrer l'email de l'utilisateur
-
+            $_SESSION['nom'] = $user['nom'];
+            
             // Redirection vers la page privée (interface.html)
-            header("Location: http://localhost/projet%20cour/html/interface.html");
+            header("Location: interface.php");
             exit(); // Terminer le script ici après la redirection
         } else {
             echo "Mot de passe incorrect.";

@@ -22,21 +22,5 @@ document.getElementById('directory-input').addEventListener('change', (event) =>
     });
 });
 
-// Validation et soumission du formulaire
-document.getElementById('hyperparameters-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
-
-    // Bootstrap alert
-    alert(`
-        Traitement lancé avec succès!
-        Taux d'apprentissage: ${data.learning_rate}
-        Époques: ${data.epochs}
-    `);
-});
-
-
 
 
