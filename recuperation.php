@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     // Prepare the statement
-    if ($stmt = $connection->prepare($sql)) {
+    if ($stmt = $connection->prepare($sql)) { 
         // Bind parameters (s = string, d = double, i = integer)
         $stmt->bind_param(
             'ssdiiissdd',

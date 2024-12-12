@@ -55,6 +55,8 @@ if (isset($_SESSION['parameters'])) {
         <!-- Buttons for Testing and Creating Model -->
         <div class="text-center mb-4">
             <a href="historique.php" class="btn btn-test-model"><i class="fas fa-play"></i> Voir historique </a>
+            <!-- Test Model Button -->
+            <a href="pred.php" class="btn btn-test-model"><i class="fas fa-search"></i> Tester le Modèle</a>
             <!-- Create New Model Link -->
             <a href="interface.php" class="btn btn-create-model"><i class="fas fa-plus-circle"></i> Créer un Nouveau Modèle</a>
         </div>
@@ -70,8 +72,6 @@ if (isset($_SESSION['parameters'])) {
                     <h3>Graphique de Précision et de perte</h3>
                     <img src="graphs/graph_acc.png." alt="Graphique de Précision" class="img-fluid mb-4">
                     
-
-
                     <!-- Entropy by Class Graph -->
                     <h3>Entropie par Classe</h3>
                     <img src="graphs/Average Entropy by Class.png" alt="Entropie par Classe" class="img-fluid mb-4">

@@ -9,7 +9,7 @@ import tensorflow as tf
 import tensorflow_hub as hub
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
-from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
+from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau 
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -165,9 +165,7 @@ def plot_training_graphs(history, val):
     plt.savefig("graphs/Average Entropy by Class.png")
     plt.tight_layout()
 
-    # Display the graph
     
-
 
 # Fonction principale qui prend les paramètres dynamiques
 def main(fpath, img_size=224, batch_size=64, epochs=5, learning_rate=0.001, 
@@ -231,3 +229,4 @@ if __name__ == "__main__":
         print("Le fichier params.json n'a pas été trouvé pour la suppression.")
     except Exception as e:
         print(f"Une erreur est survenue lors de la suppression du fichier : {e}")
+        

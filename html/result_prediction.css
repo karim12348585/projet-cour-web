@@ -1,0 +1,163 @@
+/* Corps de la page */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assurer que la page occupe au moins toute la hauteur de la fenêtre */
+}
+
+/* Section principale */
+main {
+    flex: 1; /* Permet au contenu de prendre l'espace restant */
+}
+
+/* En-tête */
+header {
+    background: linear-gradient(90deg, #3b668a, #6bb2db);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+/* Titre de la page */
+h1 {
+    margin: 0;
+}
+
+/* Carte contenant les résultats */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Entête de la carte */
+.card-header {
+    background: linear-gradient(90deg, #3b668a, #6bb2db);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white;
+}
+
+/* Corps de la carte */
+.card-body {
+    padding: 2rem;
+    background: #ffffff;
+    border: 1px solid #e3e6f0;
+    text-align: center; /* Centrer le contenu */
+}
+
+/* Prévisualisation des images */
+#image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#image-preview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+#image-preview img:hover {
+    transform: scale(1.1);
+}
+
+/* Bouton de prédiction */
+#predict-btn {
+    background: linear-gradient(90deg, #3b668a, #6bb2db); /* Utiliser le même gradient que l'en-tête */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    text-align: center; /* Centrer le texte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+#predict-btn:hover {
+    background: linear-gradient(90deg, #6bb2db, #3b668a); /* Inverser le gradient au survol */
+    transform: translateY(-2px); /* Légère élévation */
+}
+
+#predict-btn:active {
+    transform: translateY(1px); /* Effet de pression */
+}
+
+/* Bouton "Retour à l'Historique" */
+#back-history-btn {
+    background: linear-gradient(90deg, #3b668a, #6bb2db); /* Utiliser le même gradient que l'en-tête */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    text-decoration: none; /* Enlever la décoration du lien */
+    text-align: center; /* Centrer le texte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+#back-history-btn:hover {
+    background: linear-gradient(90deg, #6bb2db, #3b668a); /* Inverser le gradient au survol */
+    transform: translateY(-2px); /* Légère élévation */
+}
+
+#back-history-btn:active {
+    transform: translateY(1px); /* Effet de pression */
+}
+
+#back-history-btn i {
+    margin-right: 8px; /* Espacement entre l'icône et le texte */
+}
+
+/* Pied de page */
+footer {
+    background: #333;
+    color: #aaa;
+    font-size: 0.875rem;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto; /* S'assure que le footer est poussé au bas */
+}
+
+/* Bouton de déconnexion */
+.btn-disconnect {
+    background-color: #dc3545; /* Rouge */
+    color: white;
+    padding: 0.5rem 1.25rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-disconnect:hover {
+    background-color: #b02a37; /* Rouge plus foncé au survol */
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+/* Titre pour l'historique */
+#history-title {
+    color: white; /* Assurer que le texte "Historique" soit blanc */
+}
