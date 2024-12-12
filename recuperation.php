@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Save parameters in session
     
     $_SESSION['parameters'] = [
+        
         'directory_path' => $directory_path,
         'learning_rate' => $learning_rate,
         'epochs' => $epochs,

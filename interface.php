@@ -16,12 +16,10 @@
     <header class="text-white text-center py-4 shadow-lg"> 
         <h1><i class="fas fa-camera"></i> Modèle de Classification d'Images</h1> 
         <a href="logout.php" class="btn btn-disconnect position-absolute top-0 end-0 mt-3 me-4">Se Déconnecter</a>
-    
     </header>
 
-
     <main class="container my-5">
-        <!-- Sélection du répertoire d'images -->
+<!-- Sélection du répertoire d'images -->
         <section id="image-selection" class="mb-5">
             <div class="card shadow-lg border-0">
                 <div class="card-header bg-gradient-primary text-white">
@@ -29,7 +27,7 @@
                 </div>
                 <div class="card-body">
                     <input type="file" id="directory-input" webkitdirectory directory multiple class="form-control mb-4">
-                    <div id="image-preview" class="d-flex flex-wrap gap-4"></div>
+                    <div id="image-preview" class="d-flex flex-wrap gap-4" style="max-height: 300px; overflow-y: auto;"></div> <!-- Prévisualisation des images avec scroll -->
                 </div>
             </div>
         </section>
@@ -41,18 +39,16 @@
                     <h2><i class="fas fa-sliders-h"></i> Saisie des Hyperparamètres</h2>
                 </div>
                 <div class="card-body">
-                    <!-- Formulaire lié au fichier PHP -->
                     <form id="hyperparameters-form" action="recuperation.php" method="POST" class="row g-4">
                         <!-- Ajouter un champ caché pour le chemin du répertoire -->
                         <input type="hidden" id="directory-path" name="directory_path">
-
                         <div class="col-md-6">
                             <label class="form-label fw-bold">Taux d'apprentissage</label>
                             <input type="number" step="0.0001" min="0.0001" max="1" name="learning_rate" class="form-control" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label fw-bold">Nombre d'époques</label>
-                            <input type="number" min="10" max="50" name="epochs" class="form-control" required>
+                            <input type="number" min="1" max="50" name="epochs" class="form-control" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label fw-bold">Patience</label>
@@ -116,15 +112,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Script pour capturer le chemin du répertoire et le transmettre au formulaire
-        document.getElementById('directory-input').addEventListener('change', (event) => {
-            const directoryPath = event.target.files[0]?.webkitRelativePath.split('/')[0];
-            document.getElementById('directory-path').value = directoryPath || '';
-        });
+document.getElementById('directory-input').addEventListener('change', (event) => {
+    const files = event.target.files;
+    if (files.length > 0) {
+        const directoryPath = files[0].webkitRelativePath.split('/')[0]; // Modify this part if necessary
+        document.getElementById('directory-path').value = directoryPath || '';
+    }
+});
 
-
-
-        // Sélection et affichage des images
+        // Sélection et affichage des images avec une limite de 10 images maximum
         document.getElementById('directory-input').addEventListener('change', (event) => {
             const imagePreview = document.getElementById('image-preview');
             imagePreview.innerHTML = ''; // Réinitialise l'affichage
@@ -135,20 +131,28 @@
                 return;
             }
         
+            // Limiter à 10 images
+            const maxImages = 10;
+            let imageCount = 0;
+
             Array.from(files).forEach((file) => {
                 if (file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        const img = document.createElement('img');
-                        img.src = e.target.result;
-                        imagePreview.appendChild(img);
-                    };
-                    reader.readAsDataURL(file);
+                    if (imageCount < maxImages) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.style.maxWidth = '150px';
+                            img.style.maxHeight = '150px';
+                            img.style.objectFit = 'cover';
+                            imagePreview.appendChild(img);
+                            imageCount++;
+                        };
+                        reader.readAsDataURL(file);
+                    }
                 }
             });
         });
-
-
     </script>
 </body>
 </html>

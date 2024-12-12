@@ -32,7 +32,8 @@ class Database {
 
     // Méthode pour enregistrer un utilisateur (Sign Up)
     public function saveUser($name, $email, $password) {
-        $sql = "INSERT INTO utilisateurs (nom, email, mot_de_passe) VALUES (?, ?, ?)";
+        
+        $sql = "INSERT INTO utilisateurs (nom , email, mot_de_passe) VALUES (?, ?, ?)";
 
         $stmt = $this->connection->prepare($sql);
         if (!$stmt) {
